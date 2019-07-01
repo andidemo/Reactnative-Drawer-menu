@@ -22,7 +22,7 @@ auth:login,
 home:hamburger
 },
 {
-  initialRouteName:"home"
+  initialRouteName:"auth"
 }
 )
 );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet,Image } from 'react-native'
+import { ScrollView, Text, TouchableOpacity, TextInput, StyleSheet,Image } from 'react-native'
 import { Actions } from 'react-native-router-flux';
+// import { ScrollView } from 'react-native-gesture-handler';
 class Login extends Component {
    state = {
       email: '',
@@ -19,8 +20,9 @@ class Login extends Component {
       if (this.state.password != '') {
         //Check for the Email TextInput
         alert('email: ' + email + ' password: ' + pass)
-        Actions.hamburgericon()     
-       } 
+        debugger
+        this.props.navigation.navigate('NavigationDrawerStructure')
+             } 
        else {
         alert('Please Enter email');
       }
@@ -34,7 +36,7 @@ class Login extends Component {
         uri: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Stony_Brook_Athletics_Primary_Logo.png'
       };
       return (
-         <View style = {styles.container}>
+         <ScrollView style = {styles.container}>
          <Image source={pic} style={styles.logo}/>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
@@ -56,7 +58,7 @@ class Login extends Component {
             >
                <Text style = {styles.submitButtonText}> Submit </Text>
             </TouchableOpacity>
-         </View>
+         </ScrollView>
       )
    }
 }
